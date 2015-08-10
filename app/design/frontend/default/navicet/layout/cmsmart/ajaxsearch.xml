@@ -15,9 +15,9 @@
 			
 			
         </reference>
-        <reference name="top.search">
+        <!--<reference name="top.search">
             <action method="setTemplate" ifconfig="ajaxsearch/settings/enabled"><template>cmsmart/ajaxsearch/topsearch.phtml</template></action>
-        </reference>
+        </reference>-->
 
     </default>
     <ajaxsearch_suggest_result>

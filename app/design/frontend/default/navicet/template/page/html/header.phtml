@@ -88,16 +88,23 @@
                             <!-- <div class="skip-links-relative">
                                 <?php // echo $this->getLayout()->createBlock('core/template')->setTemplate('page/template/custum_link_header_2.phtml')->toHtml(); ?>
                             </div> -->
-                            <?php //echo $this->getChildHtml('topSearch') ?>
                         </div>
                         <div class="clear"></div>
-                </div>
+                
+					<div class="container-search">
+						<?php echo $this->getChildHtml('topSearch') ?>                       
+					</div>
+				</div>
+				
             </div>
 		</div>
+		
 		<div class="clear"></div>
 	</div>
+	
 </div>
 <?php echo $this->getChildHtml('topMenu') ?>
+
 <?php echo $this->getChildHtml('topContainer'); ?>
 <?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
        <?php  echo ($this->getLayout()->createBlock('cms/block')->setBlockId('slider_1')->toHtml()); ?>

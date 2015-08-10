@@ -39,13 +39,27 @@
 		-->
 		<?php $qty = $this->helper('checkout/cart')->getSummaryCount();?>
 		<?php if($qty < 1 ) { $text = $this->__('Empty');};?>
-		<div class="shopping-cart-header">
-			<a href="#"><span id="basket" class="fa fa-shopping-cart "></span><b>Cart</b><span class="ajax_cart_no_product">(<?php echo $text;?>)</span><span class="right-arrow fa fa-chevron-down"></span></a>
+		<div id="" class="shopping-cart-header">
+			<a class="" href="#"><span id="basket" class="fa fa-shopping-cart "></span><span class="skip-mobile"><b>Cart</b><span class="ajax_cart_no_product">(<?php echo $text;?>)</span><span class="right-arrow fa fa-chevron-down"></span></span></a>
 		</div>
 	</div>
-    <!-- <h3><?php // echo $this->__('My Cart') ?>:</h3>  -->
-    
+   
 </div>
+
+
+<!--<div class="block-cart-header only-mobile">
+    <div id="ajaxscicon">
+		<?php $qty = $this->helper('checkout/cart')->getSummaryCount();?>
+		<?php if($qty < 1 ) { $text = $this->__('Empty');};?>
+		<div id="" class="shopping-cart-header skip-mobile">
+			<a class="" href="#"><span id="basket" class="fa fa-shopping-cart "></span><b>Cart</b><span class="ajax_cart_no_product">(<?php echo $text;?>)</span><span class="right-arrow fa fa-chevron-down"></span></a>
+		</div>
+	</div>
+   
+</div>-->
+
+
+
 
     <?php $_cartQty = $this->getSummaryCount() ?>
     <!--  <h3><?php /*echo $this->__('My Cart')*/ ?>:</h3> -->

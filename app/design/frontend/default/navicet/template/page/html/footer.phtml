@@ -24,15 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="wide-banner-container">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('wide-banner')->toHtml() ?>
-			</div>
-		</div>
-	</div>
-</div>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('wide-banner')->toHtml() ?>		
+
 <?php if(Mage::getModel('cms/block')->load('info-bottom-banner')->getIsActive()):?>
 <div class="footer-info-container">
 	<div class="container">

@@ -340,15 +340,15 @@
 	.page-title h1, .page-title h2 {font-size: 25px;}
 	.pager .pages {clear:both;margin:0;text-align:center; padding-top:10px;}
 	
-	.products-grid li.item { text-align: left; position:relative; width:100%; }
+	.products-grid li.item { text-align: left; position:relative; }
 	.products-list li.item {padding: 10px;}
 	.wrapper-hover {}
-	.products-grid button.btn-cart {width: auto;}
+	.products-grid button.btn-cart {width: 100%;}
 	.products-grid .product-image,
-	.products-list .product-image { float:left;  margin-right: 10px; width:110px;overflow: hidden; border: 0; }
+	.products-list .product-image { float:left;  margin-right: 10px; width:100%;overflow: hidden; border: 0; }
 	.products-grid  .item.free .product-image {float: none; margin-right: 0; width: 100%;}
 	.products-grid .product-shop,
-	.products-list .product-shop { overflow:hidden;}
+	.products-list .product-shop { }
 	.products-grid .product-shop {padding: 0 5px;}
 	.products-list .ratings .rating-links a+span+a,
 	.products-list .ratings .rating-links .separator {display:none;}
@@ -674,7 +674,7 @@
 	.form-list .name-middlename {width:100%;}
 	.form-list .customer-dob .dob-year input.input-text {width:213px;}
 	.products-grid .product-image,
-	.products-list .product-image {width:150px; }
+	.products-list .product-image {width:182px; }
 	.minimal-price-link .label {padding-left: 0;}
 	.map-popup {left:50px !important;}
 	.mini-products-list .product-name {width:315px;}

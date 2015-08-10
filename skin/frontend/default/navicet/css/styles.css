@@ -1355,14 +1355,14 @@ img.lazy{
 .products-grid li.last{ margin-right:0;}
 .products-grid li.first {} 
 .products-grid .product-image { 
-	display:block;
+	/* display:block;
 	border:1px solid #e6e6e6;  
 	max-width:270px; 
 	height:auto; 
 	margin:0 auto 13px; 
 	text-align: center; 
 	position: relative; 
-	overflow: hidden;
+	overflow: hidden; */
 }
 .products-grid .product-image:hover {	border-color:#ccc;}
 
@@ -3028,7 +3028,7 @@ body div.shadow.active-form {height: 100%; width: 100%;}
 .footer ul li {	display:block;	padding:0 0 4px; font-family: 'Cambo', "Times New Roman", serif; font-size:13px; }
 .footer ul li a {	display:inline-block; color:#b0b0b0;	text-decoration:none;}
 .footer ul li a:hover { color:#fff; }
-.footer .footer-col {float:left;margin-right:2.1%;	width:23%; border-right:solid 1px #464646; min-height:280px; padding:12px 0 13px 0; }
+.footer .footer-col {float:left;margin-right:2.1%;	width:23%; border-right:solid 1px #464646;  padding:12px 0 13px 0; }
 .footer .footer-col.last { margin-right:0;}
 .footer .footer-col.footer-col-side { float:right; margin-right:0; border:0; }
 .footer .footer-col span.tel {	display:block;font-size:18px;line-height:22px;	color:#e13f52;}

@@ -106,14 +106,14 @@
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
-        <ul class="products-grid grid-clol-6">
+        <ul class="products-grid grid-products">
         <?php endif ?>
-            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-item4" itemscope itemtype="http://schema.org/product">
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-md-4 col-sm-6 col-xs-12">
                 <div class="wrapper-hover">
                     <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image" itemprop="url"><img  src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(270, 414); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/></a>
                     <div class="product-shop">
                         <h3 class="product-name">
-                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" itemprop="name">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
                                 <?php $small_getName = strip_tags($this->htmlEscape($_product->getName()));
                                  if (strlen($small_getName) < 50) echo($small_getName);
                                  else { echo mb_substr($small_getName, 0, 50,'UTF-8').'...';} ?>
