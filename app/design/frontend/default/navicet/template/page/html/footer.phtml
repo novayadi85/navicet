@@ -1,0 +1,132 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="wide-banner-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('wide-banner')->toHtml() ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php if(Mage::getModel('cms/block')->load('info-bottom-banner')->getIsActive()):?>
+<div class="footer-info-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('info-bottom-banner')->toHtml() ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif;?>
+
+<?php echo $this->getChildHtml('aw_blog_footer') ?>
+<?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms' ) :  ?>
+	<?php echo $this->getChildHtml('tm_googlemap_embed') ?>
+<?php endif;  ?>
+<div class="footer-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="footer">
+					<p id="back-top"><a href="#top"><span><?php echo $this->__('Top') ?></span></a> </p> 
+			<div class="footer-cols-wrapper">
+<div class="footer-col footer-col-ex">
+<div class="f_block">
+<h4>Information<span class="toggle"></span></h4>
+<div class="footer-col-content">
+<?php //echo $this->getChildHtml('cms_footer_links') ?>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('information-footer')->toHtml() ?>
+		
+</div>
+</div>
+</div>
+<div class="footer-col middle footer-col-ex">
+	<div class="f_block">
+		<h4>Why buy from us<span class="toggle"></span></h4>
+		<div class="footer-col-content">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('account-footer')->toHtml() ?>
+		</div>
+	</div>
+</div>
+<div class="footer-col last footer-col-ex">
+<div class="f_block">
+<h4>My account<span class="toggle"></span></h4>
+	<div class="footer-col-content">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact-footer')->toHtml() ?>
+	</div>
+</div>
+</div> <div class="footer-col footer-col-side last footer-col-ex">
+<div class="f_block block-subscribe">
+<h4>Newsletter<span class="toggle"></span></h4>
+<div class="footer-col-content">
+<?php echo $this->getChildHtml('left.newsletter'); ?>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    new Varien.searchForm('newsletter-validate-detail', 'newsletter', 'Enter your email address');
+//]]>
+</script>
+</div>
+
+<div class="f_block socials">
+<h4>Follow us<span class="toggle"></span></h4>
+<div class="footer-col-content">
+<div class="socials_wrapper">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('list_icon_socials')->toHtml() ?>
+</div>
+</div>
+</div> 
+
+</div>
+</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bottom-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="bottom-wrapper">
+					<div class="footer_menu_wrapper">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('bottom-menu')->toHtml() ?>
+					</div>
+					<address><?php echo $this->getCopyright() ?></address>
+						<div class="clear"></div>
+						<?php //echo $this->getChildHtml('store_switcher') ?>
+						<?php //echo $this->getChildHtml('paypal.partner.right.logo'); ?>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
