@@ -25,7 +25,10 @@
 .products-grid li.item {
     margin-left: 0;
     position: relative;
-    padding: 0;
+	padding: 15px;
+}
+.mask-content {
+	position:inherit
 }
 .products-grid .product-image { 
 	display:block;

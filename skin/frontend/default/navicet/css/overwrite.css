@@ -198,7 +198,7 @@ span.ajax_cart_no_product {
 	position: absolute;
 	width: 100%;
 	bottom: 13px;
-	visibility:visible;
+	visibility:hidden;
 	background:#999;
 	-webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;

@@ -44,7 +44,7 @@
         
     </div>
 <?php else: ?>
-    <div class="category-products">
+    <div class="category-products row">
     <?php // echo $this->getToolbarHtml() ?>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
@@ -108,8 +108,8 @@
         <?php if ($i++%$_columnCount==0): ?>
         <ul class="products-grid grid-products">
         <?php endif ?>
-            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-md-4 col-sm-6 col-xs-12">
-                <div class="wrapper-hover">
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="wrapper-hover mask-content">
                     <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image" itemprop="url"><img  src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(270, 414); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/></a>
                     <div class="product-shop">
                         <h3 class="product-name">
