@@ -674,7 +674,7 @@
 	.form-list .name-middlename {width:100%;}
 	.form-list .customer-dob .dob-year input.input-text {width:213px;}
 	.products-grid .product-image,
-	.products-list .product-image {width:182px; }
+	.products-list .product-image {}
 	.minimal-price-link .label {padding-left: 0;}
 	.map-popup {left:50px !important;}
 	.mini-products-list .product-name {width:315px;}
