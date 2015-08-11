@@ -158,7 +158,7 @@ div#ajaxcart .truncated:hover .item-options { top:auto; left:auto; }
 .block-cart-header .summary-top { 
 	font-weight:300; 
 	font-size: 20px; 
-	color: #73d5c9; 
+	color: #000; 
 	text-align: center; 
 	position: relative; 
 	font-weight: bold;
@@ -275,7 +275,8 @@ div#ajaxcart .truncated:hover .item-options { top:auto; left:auto; }
 		top: 50px !important;
 		right: 5px !important;
 		left: auto !important;
-		position: absolute !important;
+		position: fixed !important;
+		width:100% !important;
 	}
 	.ajaxcart .block {padding: 0;}
 	.block-cart-header {
@@ -297,10 +298,10 @@ div#ajaxcart .truncated:hover .item-options { top:auto; left:auto; }
 		display: inline-block;
 		font-size: 16px; 
 		padding-left: 13px; 
-		position: absolute;
+		position: fixed;
 		padding: 0;
-		width: 100%;
-		left: 0;
+		width: 50%;
+		left: 85px;
 		top:0;
 	}
 	#ajaxscicon img {display: none;}

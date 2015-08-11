@@ -22,7 +22,7 @@ a, a:hover {
 
 .header .header-border{
 	background:#111111;
-	margin: 0 -10000px 20px;
+	margin: 0 -9960px 20px;
 	padding: 10px 10000px 0px;
 }
 .header .header-border .phone {
@@ -371,4 +371,28 @@ body.ps-static .page-sitemap .links a:hover {color:#fff;}
 }
 .concept .header {
     margin-bottom: 30px;
+}
+.banner-info-container.banner-info-container {
+    padding: 0;
+}
+
+#slide-main {
+    padding-right: 8px;
+}
+#megamenu {
+	padding-left:0px;
+	padding-right:0px;
+}
+.grid-full > li > .level-top{
+	top:55px;
+
+}
+.header a:focus{
+	color:#fff;
+}
+a:hover {
+    color: #fff;
+}
+.button span > span:hover{
+	background:#252525;
 }

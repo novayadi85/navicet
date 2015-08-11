@@ -16,16 +16,23 @@
     padding: 5px 10px;
 }
 .button span  > span{
-    background: #303030;
+    background: #000000;
 }
 
+.button:hover span  > span{
+    background: #303c4b;
+}
+
+.newsletter-wrapper .button span  > span , .newsletter-wrapper .button:hover span  > span{
+	background:none;
+}
 
 
 /***PRODUCTS ***/
 .products-grid li.item {
     margin-left: 0;
     position: relative;
-	padding: 15px;
+	padding: 0px 15px;
 }
 .mask-content {
 	position:inherit
@@ -49,7 +56,7 @@
 	
 	.container-search {
 		background: #000 none repeat scroll 0 0;   
-		bottom: -57px;
+		bottom: -53px;
 		position: absolute;
 		right: 10px;
 		z-index: 5;
@@ -86,7 +93,11 @@
 		background: #999 none repeat scroll 0 0;
 		display: block;
 		height: auto;
-		overflow: hidden;
+		left: 0;
+		position: fixed;
+		top: 50px;
+		width: 100%;
+		z-index: 5;
 	}
 	
 	#search_mini_form {
