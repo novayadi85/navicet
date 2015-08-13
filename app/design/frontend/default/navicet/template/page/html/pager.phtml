@@ -62,20 +62,26 @@
 
     <?php if($this->getLastPageNum()>1): ?>
     <div class="pages">
-        <strong><?php echo $this->__('Page:') ?></strong>
-        <ol>
+        <?php /** <strong><?php echo $this->__('Page:') ?></strong> **/?>
+        
         <?php if (!$this->isFirstPage()): ?>
-            <li>
-                <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous fa fa-caret-left<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
+                <a class="btn btn-default previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous fa fa-caret-left<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
                     <?php if(!$this->getAnchorTextForPrevious()): ?>
-                      <!--  <img src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>" alt="<?php echo $this->__('Previous') ?>" class="v-middle" /> -->
+                      &nbsp; <?php echo $this->__('Previous') ?><!--  <img src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>" alt="<?php echo $this->__('Previous') ?>" class="v-middle" /> -->
                     <?php else: ?>
-                        <?php echo $this->getAnchorTextForPrevious() ?>
+                        <?php echo $this->getAnchorTextForPrevious() ?> 
                     <?php endif;?>
                 </a>
-            </li>
+		<?php else :?>
+		<a class="btn btn-disabled btn-default previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous fa fa-caret-left<?php endif;?>" href="#<?php //echo $this->getPreviousPageUrl() ?>" title="<?php echo $this->__('Previous') ?>">
+			<?php if(!$this->getAnchorTextForPrevious()): ?>
+			  &nbsp; <?php echo $this->__('Previous') ?><!--  <img src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>" alt="<?php echo $this->__('Previous') ?>" class="v-middle" /> -->
+			<?php else: ?>
+				<?php echo $this->getAnchorTextForPrevious() ?> 
+			<?php endif;?>
+		</a>		
         <?php endif;?>
-
+		<ol>
         <?php if ($this->canShowFirst()): ?>
             <li><a class="first" href="<?php echo $this->getFirstPageUrl() ?>">1</a></li>
         <?php endif;?>
@@ -100,19 +106,26 @@
         <?php if ($this->canShowLast()): ?>
           <li><a class="last" href="<?php echo $this->getLastPageUrl() ?>"><?php echo $this->getLastPageNum() ?></a></li>
         <?php endif;?>
-
+		</ol>
         <?php if (!$this->isLastPage()): ?>
-            <li>
-                <a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next fa fa-caret-right<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
+                <a class="btn btn-default next<?php if(!$this->getAnchorTextForNext()): ?> <?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
                     <?php if(!$this->getAnchorTextForNext()): ?>
-                        <!-- <img src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>" alt="<?php echo $this->__('Next') ?>" class="v-middle" /> -->
+                        <!-- <img src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>" alt="<?php echo $this->__('Next') ?>" class="v-middle" /> --><span> <?php echo $this->__('Next') ?>&nbsp;<span class="i-next fa fa-caret-right"></span></span>
                     <?php else: ?>
-                        <?php echo $this->getAnchorTextForNext() ?>
+                        <?php echo $this->getAnchorTextForNext() ?> 
                     <?php endif;?>
                 </a>
-            </li>
+				
+		<?php else :?>
+		<a class="btn btn-disabled btn-default next<?php if(!$this->getAnchorTextForNext()): ?> <?php endif; ?>" href="#<?php //echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
+			<?php if(!$this->getAnchorTextForNext()): ?>
+				<!-- <img src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>" alt="<?php echo $this->__('Next') ?>" class="v-middle" /> --><span> <?php echo $this->__('Next') ?>&nbsp;<span class="i-next fa fa-caret-right"></span></span>
+			<?php else: ?>
+				<?php echo $this->getAnchorTextForNext() ?> 
+			<?php endif;?>
+		</a>
         <?php endif;?>
-        </ol>
+        
 
     </div>
     <?php endif; ?>

@@ -33,15 +33,19 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
+	<?php if (!$this->getHidePager()) : ?>
+	   <!-- <div class="pager"> here -->
+	
     <div class="pager">
-        <p class="amount">
+        <?php /** <p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
                 <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
             <?php else: ?>
                 <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
             <?php endif; ?>
         </p>
-
+		
+		
         <div class="limiter">
             <label><?php echo $this->__('Show') ?></label>
             <select onchange="setLocation(this.value)">
@@ -52,15 +56,16 @@
             <?php endforeach; ?>
             </select> <?php //echo $this->__('per page') ?>
         </div>
-
+		**/ ?>
         <?php echo $this->getPagerHtml() ?>
 
     </div>
+	<?php endif;?>
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="sorter">
+    <div class="sorter <?php if (!$this->getHidePager()) echo "hide"; ?> ">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
-        <p class="view-mode">
+        <p class="view-mode hide">
             <?php $_modes = $this->getModes(); ?>
             <?php if($_modes && count($_modes)>1): ?>
             <label><?php echo $this->__('View as') ?>:</label>
@@ -76,23 +81,35 @@
         <?php endif; ?>
     
         <div class="sort-by">
-			<div class="right">
+			<?php /** <div class="right">
 				<?php if($this->getCurrentDirection() == 'desc'): ?>
 					<a class="fa fa-arrow-down" href="<?php echo $this->getOrderUrl(null, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>"><!-- <img src="<?php echo $this->getSkinUrl('images/i_desc_arrow.gif') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="v-middle" /> --></a>
 				<?php else: ?>
 					<a class="fa fa-arrow-up" href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><!-- <img src="<?php echo $this->getSkinUrl('images/i_asc_arrow.gif') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle" /> --></a>
 				<?php endif; ?>
-			</div>
+			</div> 
             <label><?php echo $this->__('Sort By') ?></label>
-            <select onchange="setLocation(this.value)">
-            <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
-                <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+            
+			<select onchange="setLocation(this.value)">
+            **/ ?>
+			<?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                <?php /** <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
                     <?php echo $this->__($_order) ?>
-                </option>
+                </option> **/?>
+				<button onclick="setLocation('<?php echo $this->getOrderUrl($_key, 'asc') ?>')" class="btn btn-black<?php if($this->isOrderCurrent($_key)): ?> btn-default<?php endif; ?> "><span><?php echo $this->__($_order) ?></span></button>
             <?php endforeach; ?>
-            </select>
+            <?php /** </select> **/ ?>
         </div>
+		<div class="filter-amount">
+			<?php if($this->getLastPageNum()>1): ?>
+				<?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+			<?php else: ?>
+				<strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
+			<?php endif; ?>
+		</div>
     </div>
+	
+	
     <?php endif; ?>
 </div>
 <?php endif ?>

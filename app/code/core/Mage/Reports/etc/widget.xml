@@ -52,6 +52,10 @@
                         <value>reports/widget/viewed/content/viewed_list.phtml</value>
                         <label>Viewed Products List Template</label>
                     </list>
+					<carousel translate="label">
+                        <value>reports/widget/viewed/content/viewed_slider.phtml</value>
+                        <label>Slide carousel</label>
+                    </carousel>
                 </values>
             </template>
         </parameters>

@@ -1075,7 +1075,8 @@ img.lazy{
 .block-layered-nav {}
 .block-layered-nav dl {margin-bottom: 0;}
 .block-layered-nav dt {  font-weight:bold; padding-top:15px; color: #000; }
-.block-layered-nav dt:first-child {border-top:1px solid #e5e5e5;}
+/**.block-layered-nav dt:first-child {border-top:1px solid #e5e5e5;}
+**/
 .block-layered-nav dd { padding:7px 0 0px; }
 .block-layered-nav dd.odd.last { padding-bottom:0; margin-bottom:0;}
 .block-layered-nav dd li a { text-decoration:none; }

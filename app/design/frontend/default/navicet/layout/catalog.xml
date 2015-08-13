@@ -112,9 +112,15 @@ Category layered navigation layout
 
     <catalog_category_layered translate="label">
         <label>Catalog Category (Anchor)</label>
-        <reference name="left">
+        <reference name="root">
+			<action method="unsetChild"><name>breadcrumbs</name></action>
+		</reference>
+		<reference name="left">
             <block type="catalog/layer_view" name="catalog.leftnav" before="-" template="catalog/layer/view.phtml"/>
-        </reference>
+			<action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+			<action method="unsetChild"><name>cart_sidebar</name></action>
+        
+		</reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
                 <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
@@ -142,8 +148,9 @@ Category layered navigation layout
                     <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
                     <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
                     <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
-                    <action method="setColumnCount"><columns>4</columns></action>
+                    <action method="setColumnCount"><columns>3</columns></action>
                 </block>
+				<block type="reports/product_viewed" name="product.recently.viewed" as="product_recently_viewed" template="reports/product_viewed.phtml"/>
             </block>
         </reference>
     </catalog_category_layered>

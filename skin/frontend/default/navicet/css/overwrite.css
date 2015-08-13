@@ -396,3 +396,83 @@ a:hover {
 .button span > span:hover{
 	background:#252525;
 }
+
+
+.breadcrumbs {
+	border: none;
+	padding: 8px 0px;
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid #252525;
+}
+
+div#catalog-filters {
+	margin-left: -15px;
+}
+
+.block-layer-filter-title {
+	background: #d7d7d7;
+	padding: 10px;
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+}
+.block-layer-filter li span , .block-layer-filter li a {
+	padding: 10px 0 !important;
+	border-bottom: 1px solid #232323;
+	display: block;
+	color: #898989;
+	font-size: 14px;
+	width: 100%;
+}
+
+div.ptech-filter span.adj-nav-category-current {
+	color:#fff;
+}
+.col2-left-layout .products-grid, .col2-right-layout .products-grid {
+	margin-right: -15px;
+	padding-right:0px;
+}
+.toolbar {
+	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+.toolbar .filter-amount{ float:right;}
+
+.pager .pages {margin: 0}
+a.btn.btn-default.previous {
+float: left;
+}
+a.btn.btn-default.next {
+float: right;
+}
+a.btn.btn-disabled{background:#252525;color:#464646;border:none;}
+.page-title, .category-title {
+	margin: 0 0 0px;
+}
+.page-title h1, .page-title h2 {
+	font-size: 30px;color: #FFF;
+}
+.toolbar .pager {
+	border-bottom: none; 
+}
+.sorter .sort-by {
+	float:left;
+}
+button.btn.btn-black {
+	background: #000;
+	color: #fff;
+}
+button.btn.btn-black.btn-default {
+	background: #fff;
+	color: #000;
+}
+button.btn.btn-black:hover {background:#fff;color:#000}
+
+.box-up-sell ul li {
+	float: left;
+	margin: 0 12px;
+	width: 250px !important;
+	text-align: center;
+}

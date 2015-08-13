@@ -44,8 +44,8 @@
         
     </div>
 <?php else: ?>
-    <div class="category-products">
-    <?php // echo $this->getToolbarHtml() ?>
+    <div class="category-products row">
+   <?php echo $this->getToolbarBlock()->setHidePager(true)->toHtml();?>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
     <?php $_iterator = 0; ?>
@@ -106,14 +106,14 @@
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
-        <ul class="products-grid grid-clol-6">
+        <ul class="products-grid grid-products">
         <?php endif ?>
-            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-item4" itemscope itemtype="http://schema.org/product">
-                <div class="wrapper-hover">
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?> col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="wrapper-hover mask-content">
                     <a  href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image" itemprop="url"><img  src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(270, 414); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image"/></a>
                     <div class="product-shop">
                         <h3 class="product-name">
-                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" itemprop="name">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
                                 <?php $small_getName = strip_tags($this->htmlEscape($_product->getName()));
                                  if (strlen($small_getName) < 50) echo($small_getName);
                                  else { echo mb_substr($small_getName, 0, 50,'UTF-8').'...';} ?>
@@ -160,7 +160,9 @@
         <?php endforeach ?>
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
-
+	<div class="toolbar-bottom">
+        <?php echo $this->getToolbarBlock()->setHidePager(false)->toHtml();?>
+    </div>
 </div>
 <?php endif; ?>
 
