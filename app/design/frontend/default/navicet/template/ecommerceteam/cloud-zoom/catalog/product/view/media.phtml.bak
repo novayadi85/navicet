@@ -29,8 +29,8 @@ $zoomHeight     = intval($helper->getConfigData('zoom_height'));
 $bigImageWidth  = intval($helper->getConfigData('big_image_width'));
 $bigImageHeight = intval($helper->getConfigData('big_image_height'));
 
-$bigImageX  = 308;
-$bigImageY = 472;
+$bigImageX  = 490;
+$bigImageY = 600;
 
 $config = array(
     "position:'{$position}'",
@@ -108,7 +108,7 @@ if ($zoomHeight) {
                 <li>
                     <a href='<?php echo $this->helper('catalog/image')->init($product, 'image', $_image->getFile())->resize($bigImageWidth, $bigImageHeight);?>' class='cloud-zoom-gallery' title='<?php echo $this->htmlEscape($_image->getLabel()) ?>'
                     rel="useZoom: 'zoom1', smallImage: '<?php echo $this->helper('catalog/image')->init($product, 'image', $_image->getFile())->resize($bigImageX, $bigImageY);?>' ">
-                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail', $_image->getFile())->resize(97,149);?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
+                    <img src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail', $_image->getFile())->resize(97,175);?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
                     </a>
                 </li>
             <?php endforeach; ?>
