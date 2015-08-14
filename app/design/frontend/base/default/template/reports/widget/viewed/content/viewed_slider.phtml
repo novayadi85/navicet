@@ -141,18 +141,25 @@
        */
       ?>
 <div class="box-collateral box-up-sell">
-    <h2><?php echo $this->__('You may also be interested in the following product(s)') ?></h2>
+    <h2><?php echo $this->__('Peviously Products') ?></h2>
     <ul class="products-ups <?php echo $carous;?>">
     <?php foreach($_products as $item): ?>           
 	<?php $_item = Mage::getModel('catalog/product')->load($item->getId());?>
 			
 	<li class="item" itemscope itemtype="http://schema.org/Product">
-		<div class="product-box">
+		<div class="wrapper-hover mask-content product-box">
 		   <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $_item->getName() ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(325,498) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
-		   <div class="noSwipe">
+		   <div class="product-shop">
 			<h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>
-			 <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
-			 <?php echo $this->getReviewsSummaryHtml($_item) ?>
+			 <?php echo $this->getPriceHtml($_item, true) ?>
+			 <?php //echo $this->getReviewsSummaryHtml($_item) ?>
+				<div class="actions">
+					<?php if($_item->isSaleable()): ?>
+						<button type="button" title="<?php echo $this->__('View Detail') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getProductUrl($_item) ?>')"><span><span><?php echo $this->__('View Detail') ?></span></span></button>
+					<?php else: ?>
+						<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+					<?php endif; ?>
+				</div>
 			 <div class="clear"></div>
 		   </div>
 		</div>
